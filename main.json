@@ -1,0 +1,49 @@
+{
+  "weirdProducts": [
+    {
+      "name": "Mug",
+      "price" : 4, 
+      "details": [
+        "clay",
+        "unbreakable"
+      ],
+      "image": "mug.jpg"
+    },
+    {
+      "name": "Pillow",
+      "price" : 10, 
+      "details": [
+        "soft",
+        "White color"
+      ],
+      "image": "pillow.jpg"
+    },
+    {
+      "name": "Pen",
+      "price" : 2, 
+      "details": [
+        "black",
+        "Lights"
+      ],
+      "image": "pen.jpg"
+    },
+    {
+      "name": "T-Shirt",
+      "price" : 15, 
+      "details": [
+        "White",
+        "Custom design"
+      ],
+      "image": "tshirt.jpg"
+    },
+    {
+      "name": "Chocolate",
+      "price" : 5, 
+      "details": [
+        "Dark",
+        "Tasty"
+      ],
+      "image": "chocolate.jpg"
+    }
+  ]
+}
