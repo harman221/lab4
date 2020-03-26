@@ -41,6 +41,8 @@
 				img.setAttribute('src', 'https://harman221.github.io/lab4/img/' + weirdProducts[i].image);
         //set the image alt attribute 
 				img.setAttribute('alt', weirdProducts[i].name);
+				img.setAttribute('height', '300px');
+				img.setAttribute('width', '300px');
         //set the text content of the h2 to name
 				h2.textContent = weirdProducts[i].name;
         //set the text contenxt of the first paragraph 
