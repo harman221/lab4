@@ -1,7 +1,7 @@
 
 
 
-		var requestURL = 'https://github.com/harman221/lab4/blob/master/main.json';
+		var requestURL = 'https://harman221.github.io/lab4/main.json';
 		/*Create a new XHR object */
 		var request = new XMLHttpRequest();
 		/* Open a new request using the request() method */
@@ -38,7 +38,7 @@
         //store a reference to the section element in var section 
         let section = document.querySelector('section');
         //set the image src attribute 
-				img.setAttribute('src', 'https://github.com/harman221/lab4/blob/master/img/' + weirdProducts[i].image);
+				img.setAttribute('src', 'https://harman221.github.io/lab4/img/' + weirdProducts[i].image);
         //set the image alt attribute 
 				img.setAttribute('alt', weirdProducts[i].name);
         //set the text content of the h2 to name
