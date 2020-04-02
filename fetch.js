@@ -10,13 +10,32 @@
 // };
 
 
-fetch('https://harman221.github.io/lab4/main.json').then(function(response) {
-  return response.json();
-}).then(function(json) {
-  let myProducts = json;
-  initialize(myProducts);
-}).catch(function(err) {
-  console.log('Fetch problem: ' + err.message);
+// fetch('https://harman221.github.io/lab4/main.json').then(function(response) {
+//   return response.json();
+// }).then(function(json) {
+//   let myProducts = json;
+//   initialize(myProducts);
+// }).catch(function(err) {
+//   console.log('Fetch problem: ' + err.message);
+// });
+
+const getJSON = async url => {
+  try {
+    const response = await fetch(url);
+    if(!response.ok) // check if response worked (no 404 errors etc...)
+      throw new Error(response.statusText);
+
+    const weirdProducts = await response.json(); // get JSON from the response
+    return weirdProducts; // returns a promise, which resolves to this data value
+  } catch(error) {
+    return error;
+  }
+}
+
+getJSON("https://harman221.github.io/lab4/main.json").then(weirdProducts => {
+  console.log(weirdProducts);
+}).catch(error => {
+  console.error(error);
 });
 
 function weirdProducts(jsonObj) {
