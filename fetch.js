@@ -1,45 +1,15 @@
-// var requestURL = 'https://harman221.github.io/lab4/main.json';
-// var request = new XMLHttpRequest();
-// request.open('GET', requestURL);
-// request.responseType = 'json';
-// request.send();
-// request.onload = function() {
-//     var myProducts = request.response;
-//     console.log(myProducts);
-//     weirdProducts(myProducts);
-// };
+fetch('https://harman221.github.io/lab4/main.json')
+.then((resp) => resp.json())
+.then(function(data) {
 
+console.log(data);
+let myProducts = data;
+weirdProducts(myProducts);
 
-// fetch('https://harman221.github.io/lab4/main.json').then(function(response) {
-//   return response.json();
-// }).then(function(json) {
-//   let myProducts = json;
-//   initialize(myProducts);
-// }).catch(function(err) {
-//   console.log('Fetch problem: ' + err.message);
-// });
-
-const getJSON = async url => {
-  try {
-    const response = await fetch(url);
-    if(!response.ok) // check if response worked (no 404 errors etc...)
-      throw new Error(response.statusText);
-
-    const weirdProducts = await response.json(); // get JSON from the response
-    return weirdProducts; // returns a promise, which resolves to this data value
-  } catch(error) {
-    return error;
-  }
-}
-
-getJSON("https://harman221.github.io/lab4/main.json").then(weirdProducts => {
-  console.log(weirdProducts);
-}).catch(error => {
-  console.error(error);
 });
 
 function weirdProducts(jsonObj) {
-    let weirdProducts = jsonObj.weirdProducts;
+     let weirdProducts = jsonObj.weirdProducts;
     for (let i = 0; i < weirdProducts.length; i++) {
         let article = document.createElement('article');
         let h2 = document.createElement('h2');
@@ -71,3 +41,45 @@ function weirdProducts(jsonObj) {
         section.appendChild(article);
     }
 }
+
+
+// var requestURL = 'https://harman221.github.io/lab4/main.json';
+// var request = new XMLHttpRequest();
+// request.open('GET', requestURL);
+// request.responseType = 'json';
+// request.send();
+// request.onload = function() {
+//     var myProducts = request.response;
+//     console.log(myProducts);
+//     weirdProducts(myProducts);
+// };
+
+// fetch('https://harman221.github.io/lab4/main.json').then(function(response) {
+//   return response.json();
+// }).then(function(json) {
+//   let myProducts = json;
+//   initialize(myProducts);
+// }).catch(function(err) {
+//   console.log('Fetch problem: ' + err.message);
+// });
+
+// const getJSON = async url => {
+//   try {
+//     const response = await fetch(url);
+//     if(!response.ok) // check if response worked (no 404 errors etc...)
+//       throw new Error(response.statusText);
+
+//     const myProducts = await response.json(); // get JSON from the response
+//     return myProducts; // returns a promise, which resolves to this data value
+//   } catch(error) {
+//     return error;
+//   }
+// }
+
+// getJSON("https://harman221.github.io/lab4/main.json").then(weirdProducts => {
+//   console.log(weirdProducts);
+//   const favProduct = JSON.parse(weirdProducts);
+//     // weirdProducts(favProduct);
+// }).catch(error => {
+//   console.error(error);
+// });
